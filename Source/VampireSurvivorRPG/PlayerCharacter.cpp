@@ -78,7 +78,6 @@ void APlayerCharacter::Look(const FInputActionValue& Value)
 	{
 		// add yaw and pitch input to controller
 		AddControllerYawInput(-lookAxisVector.X);
-		//AddControllerPitchInput(lookAxisVector.Y);
 
 		FRotator rotator = m_springArm->GetRelativeRotation().Add(-lookAxisVector.Y, 0.0f, 0.0f);
 		double pitch = rotator.Pitch;

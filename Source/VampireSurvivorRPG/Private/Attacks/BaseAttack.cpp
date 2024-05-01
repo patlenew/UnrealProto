@@ -62,12 +62,8 @@ void ABaseAttack::UpdateCooldown(float DeltaTime)
 
 	m_CooldownTime -= DeltaTime;
 
-	//DEBUG_LOG("Cooldown: " + FString::SanitizeFloat(m_CooldownTime));
-	
 	if (m_CooldownTime <= 0.0f)
 	{
-		//DEBUG_LOG("nO MORE COOLDOWN!");
-		
 		m_InCooldown = false;
 	}
 }

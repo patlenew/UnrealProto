@@ -69,18 +69,10 @@ void AHitEffect::Setup(FAttackData attackData, const FVector& location)
 
 void AHitEffect::OnTimerUpdate()
 {
-	//DEBUG_LOG("yoyoyo");
-
-	// Convert to string
 	m_TimeBeforeRemoved -= 1.0f;
 
-	// Convert float to string
-	//DEBUG_LOG(FString::SanitizeFloat(m_TimeBeforeRemoved));
-	
 	if (m_TimeBeforeRemoved <= 0.0f)
 	{
-		//DEBUG_LOG("destroy");
-		
 		GetWorld()->GetTimerManager().ClearTimer(m_DestroyTimerHandle);
 		Destroy();
 	}
@@ -88,18 +80,6 @@ void AHitEffect::OnTimerUpdate()
 
 void AHitEffect::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& Hit )
 {
-	//DEBUG_LOG("HIT ANYTHING");
-
-	/*for (int i = 0; i < OtherActor->Tags.Num(); i++)
-	{
-		DEBUG_LOG(OtherActor->Tags[i].ToString());
-	}*/
-
-	// print target type
-	// DEBUG_LOG(FString::Printf( TEXT("TargetType: %d"), (int)m_AttackData.TargetType ));
-
-	// if (hasHit) return;
-
 	bool hasHit = false;
 	
 	if (m_AttackData.TargetType == AttackTargetType::ATT_Enemy)

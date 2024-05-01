@@ -35,7 +35,6 @@ void ASurvivorGameMode::Setup()
 	TArray<AActor*> player;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), APlayerCharacter::StaticClass(), player);
 	
-	//m_PlayerCharacter = GetWorld()->SpawnActor<APlayerCharacter>();
 	m_PlayerCharacter = Cast<APlayerCharacter>(player[0]); // Should be only one
 	m_PlayerCharacter->Setup(m_PlayerData);
 }
